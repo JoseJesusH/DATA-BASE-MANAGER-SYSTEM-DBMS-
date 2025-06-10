@@ -1,0 +1,78 @@
+=============================================
+         MEGATRONJ3000J DISK REPORT
+=============================================
+📁 Base path: disk
+🔧 Configuration: 5 plate(s), 5 track(s)/surface, 5 sector(s)/track
+
+🪞 Plate #0
+ ├─ Surface [Top] ID: 0
+ │   ├─ Track # 0: 5 sectors
+ │   ├─ Track # 1: 5 sectors
+ │   ├─ Track # 2: 5 sectors
+ │   ├─ Track # 3: 5 sectors
+ │   ├─ Track # 4: 5 sectors
+ ├─ Surface [Bottom] ID: 1
+ │   ├─ Track # 0: 5 sectors
+ │   ├─ Track # 1: 5 sectors
+ │   ├─ Track # 2: 5 sectors
+ │   ├─ Track # 3: 5 sectors
+ │   ├─ Track # 4: 5 sectors
+
+🪞 Plate #1
+ ├─ Surface [Top] ID: 0
+ │   ├─ Track # 0: 5 sectors
+ │   ├─ Track # 1: 5 sectors
+ │   ├─ Track # 2: 5 sectors
+ │   ├─ Track # 3: 5 sectors
+ │   ├─ Track # 4: 5 sectors
+ ├─ Surface [Bottom] ID: 1
+ │   ├─ Track # 0: 5 sectors
+ │   ├─ Track # 1: 5 sectors
+ │   ├─ Track # 2: 5 sectors
+ │   ├─ Track # 3: 5 sectors
+ │   ├─ Track # 4: 5 sectors
+
+🪞 Plate #2
+ ├─ Surface [Top] ID: 0
+ │   ├─ Track # 0: 5 sectors
+ │   ├─ Track # 1: 5 sectors
+ │   ├─ Track # 2: 5 sectors
+ │   ├─ Track # 3: 5 sectors
+ │   ├─ Track # 4: 5 sectors
+ ├─ Surface [Bottom] ID: 1
+ │   ├─ Track # 0: 5 sectors
+ │   ├─ Track # 1: 5 sectors
+ │   ├─ Track # 2: 5 sectors
+ │   ├─ Track # 3: 5 sectors
+ │   ├─ Track # 4: 5 sectors
+
+🪞 Plate #3
+ ├─ Surface [Top] ID: 0
+ │   ├─ Track # 0: 5 sectors
+ │   ├─ Track # 1: 5 sectors
+ │   ├─ Track # 2: 5 sectors
+ │   ├─ Track # 3: 5 sectors
+ │   ├─ Track # 4: 5 sectors
+ ├─ Surface [Bottom] ID: 1
+ │   ├─ Track # 0: 5 sectors
+ │   ├─ Track # 1: 5 sectors
+ │   ├─ Track # 2: 5 sectors
+ │   ├─ Track # 3: 5 sectors
+ │   ├─ Track # 4: 5 sectors
+
+🪞 Plate #4
+ ├─ Surface [Top] ID: 0
+ │   ├─ Track # 0: 5 sectors
+ │   ├─ Track # 1: 5 sectors
+ │   ├─ Track # 2: 5 sectors
+ │   ├─ Track # 3: 5 sectors
+ │   ├─ Track # 4: 5 sectors
+ ├─ Surface [Bottom] ID: 1
+ │   ├─ Track # 0: 5 sectors
+ │   ├─ Track # 1: 5 sectors
+ │   ├─ Track # 2: 5 sectors
+ │   ├─ Track # 3: 5 sectors
+ │   ├─ Track # 4: 5 sectors
+
+💾 Total Disk Capacity: 300000 bytes (292.969 KB | 0.286102 MB)
+========== END OF STRUCTURE REPORT ==========

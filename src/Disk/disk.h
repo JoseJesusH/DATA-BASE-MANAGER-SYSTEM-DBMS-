@@ -1,0 +1,40 @@
+#ifndef DISK_H
+#define DISK_H
+
+#include "plate.h"
+#include <vector>
+#include <string>
+
+class Disk {
+private:
+    int numPlates;
+    int numTracks;
+    int numSectors;
+    int sectorSize;
+    size_t totalCapacity; // NEW
+
+    std::string basePath;
+    std::vector<Plate> plates;
+
+public:
+    Disk(int plates, int tracks, int sectors, int sectorSize, const std::string& basePath);
+
+    Plate& getPlate(int plateId);
+    std::vector<Plate>& getPlates();
+    
+    void generateStructureReport(const std::string& outputPath) const;
+    bool writeRecordToDisk(const std::string& record);
+
+    size_t getTotalCapacity() const; // NEW
+
+    int getSectorSize() const;
+    int getPlateCount() const;
+    int getTrackCount() const;
+    int getSectorCount() const;
+    std::string getBasePath() const;
+
+
+};
+
+#endif
+
