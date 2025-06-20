@@ -10,11 +10,16 @@ private:
     size_t capacity;
     size_t usedSpace; // NEW
     bool occupied;
+    
+    std::string header = "";          // store initial header
+    bool headerWritten = false;       // control one-time header write
+
 
 public:
     Sector(const std::string& path, size_t cap = 4096);
 
-    bool writeRecord(const std::string& record, const std::string& locationInfo = "");
+    bool writeRecord(const std::string& record, const std::string& locationInfo = "", const std::string& sourceFile="");
+
     std::string readData() const;
     void clear();
     

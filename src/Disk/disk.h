@@ -11,16 +11,23 @@ private:
     int numTracks;
     int numSectors;
     int sectorSize;
+
+    
+
     size_t totalCapacity; // NEW
 
     std::string basePath;
+    std::string currentCsvName;
     std::vector<Plate> plates;
 
 public:
-    Disk(int plates, int tracks, int sectors, int sectorSize, const std::string& basePath);
+    Disk(int plates, int tracks, int sectors, int sectorSize, const std::string& basePath, const std::string& csvName);
 
     Plate& getPlate(int plateId);
     std::vector<Plate>& getPlates();
+    
+    void setCurrentCsvName(const std::string& name);
+    std::string getCurrentCsvName() const;
     
     void generateStructureReport(const std::string& outputPath) const;
     bool writeRecordToDisk(const std::string& record);
@@ -32,6 +39,8 @@ public:
     int getTrackCount() const;
     int getSectorCount() const;
     std::string getBasePath() const;
+    std::vector<Sector*> getAllSectors();
+
 
 
 };

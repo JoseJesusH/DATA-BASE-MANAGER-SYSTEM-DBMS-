@@ -74,5 +74,76 @@
  │   ├─ Track # 3: 5 sectors
  │   ├─ Track # 4: 5 sectors
 
+ ├─ Surface [Top] ID: 0
+ │   ├─ Track #0: 5 sectors, 77 blocks
+ │   ├─ Track #1: 5 sectors, 15 blocks
+ │   ├─ Track #2: 5 sectors, 0 blocks
+ │   ├─ Track #3: 5 sectors, 0 blocks
+ │   ├─ Track #4: 5 sectors, 0 blocks
+ ├─ Surface [Bottom] ID: 1
+ │   ├─ Track #0: 5 sectors, 0 blocks
+ │   ├─ Track #1: 5 sectors, 0 blocks
+ │   ├─ Track #2: 5 sectors, 0 blocks
+ │   ├─ Track #3: 5 sectors, 0 blocks
+ │   ├─ Track #4: 5 sectors, 0 blocks
+ 🎯 Total Blocks in Plate #0: 92
+
+ ├─ Surface [Top] ID: 0
+ │   ├─ Track #0: 5 sectors, 0 blocks
+ │   ├─ Track #1: 5 sectors, 0 blocks
+ │   ├─ Track #2: 5 sectors, 0 blocks
+ │   ├─ Track #3: 5 sectors, 0 blocks
+ │   ├─ Track #4: 5 sectors, 0 blocks
+ ├─ Surface [Bottom] ID: 1
+ │   ├─ Track #0: 5 sectors, 0 blocks
+ │   ├─ Track #1: 5 sectors, 0 blocks
+ │   ├─ Track #2: 5 sectors, 0 blocks
+ │   ├─ Track #3: 5 sectors, 0 blocks
+ │   ├─ Track #4: 5 sectors, 0 blocks
+ 🎯 Total Blocks in Plate #1: 0
+
+ ├─ Surface [Top] ID: 0
+ │   ├─ Track #0: 5 sectors, 0 blocks
+ │   ├─ Track #1: 5 sectors, 0 blocks
+ │   ├─ Track #2: 5 sectors, 0 blocks
+ │   ├─ Track #3: 5 sectors, 0 blocks
+ │   ├─ Track #4: 5 sectors, 0 blocks
+ ├─ Surface [Bottom] ID: 1
+ │   ├─ Track #0: 5 sectors, 0 blocks
+ │   ├─ Track #1: 5 sectors, 0 blocks
+ │   ├─ Track #2: 5 sectors, 0 blocks
+ │   ├─ Track #3: 5 sectors, 0 blocks
+ │   ├─ Track #4: 5 sectors, 0 blocks
+ 🎯 Total Blocks in Plate #2: 0
+
+ ├─ Surface [Top] ID: 0
+ │   ├─ Track #0: 5 sectors, 0 blocks
+ │   ├─ Track #1: 5 sectors, 0 blocks
+ │   ├─ Track #2: 5 sectors, 0 blocks
+ │   ├─ Track #3: 5 sectors, 0 blocks
+ │   ├─ Track #4: 5 sectors, 0 blocks
+ ├─ Surface [Bottom] ID: 1
+ │   ├─ Track #0: 5 sectors, 0 blocks
+ │   ├─ Track #1: 5 sectors, 0 blocks
+ │   ├─ Track #2: 5 sectors, 0 blocks
+ │   ├─ Track #3: 5 sectors, 0 blocks
+ │   ├─ Track #4: 5 sectors, 0 blocks
+ 🎯 Total Blocks in Plate #3: 0
+
+ ├─ Surface [Top] ID: 0
+ │   ├─ Track #0: 5 sectors, 0 blocks
+ │   ├─ Track #1: 5 sectors, 0 blocks
+ │   ├─ Track #2: 5 sectors, 0 blocks
+ │   ├─ Track #3: 5 sectors, 0 blocks
+ │   ├─ Track #4: 5 sectors, 0 blocks
+ ├─ Surface [Bottom] ID: 1
+ │   ├─ Track #0: 5 sectors, 0 blocks
+ │   ├─ Track #1: 5 sectors, 0 blocks
+ │   ├─ Track #2: 5 sectors, 0 blocks
+ │   ├─ Track #3: 5 sectors, 0 blocks
+ │   ├─ Track #4: 5 sectors, 0 blocks
+ 🎯 Total Blocks in Plate #4: 0
+
+📦 Total Blocks in Disk: 92
 💾 Total Disk Capacity: 300000 bytes (292.969 KB | 0.286102 MB)
 ========== END OF STRUCTURE REPORT ==========

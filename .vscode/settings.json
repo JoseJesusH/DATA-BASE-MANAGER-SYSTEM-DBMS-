@@ -96,6 +96,7 @@
     "variant": "cpp",
     "algorithm": "cpp",
     "sstream": "cpp",
-    "vector": "cpp"
+    "vector": "cpp",
+    "fstream": "cpp"
   }
 }

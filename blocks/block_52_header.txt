@@ -1,0 +1,11 @@
+[Block ID: 52]
+Total Size: 4800 bytes
+Used Size: 0 bytes
+Free Space: 4800 bytes
+Record Count: 0
+Source File: titanic.csv
+Sectors:
+ - disk/plate4_top/surface000/track001/sector003.txt (Used: 0/1200)
+ - disk/plate4_top/surface000/track001/sector004.txt (Used: 0/1200)
+ - disk/plate4_top/surface000/track002/sector000.txt (Used: 0/1200)
+ - disk/plate4_top/surface000/track002/sector001.txt (Used: 0/1200)

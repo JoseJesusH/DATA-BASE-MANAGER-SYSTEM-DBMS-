@@ -1,0 +1,16 @@
+Source File: titanic.csv
+[Sector Metadata]
+Capacity: 1200 bytes
+Free Space: 5 bytes
+Used Space: 1195 bytes
+Source File: (to be set dynamically or from block if available)
+----------------------------------------
+34,0,2,"Wheadon Mr. Edward H",male,66,0,0,C.A. 24579,10.5,,S|Plate 0 - Surface Top - Track 0 - Sector 4
+35,0,1,"Meyer Mr. Edgar Joseph",male,28,1,0,PC 17604,821.708,,C|Plate 0 - Surface Top - Track 0 - Sector 4
+36,0,1,"Holverson Mr. Alexander Oskar",male,42,1,0,113789,52,,S|Plate 0 - Surface Top - Track 0 - Sector 4
+37,1,3,"Mamee Mr. Hanna",male,,0,0,2677,7.2292,,C|Plate 0 - Surface Top - Track 0 - Sector 4
+38,0,3,"Cann Mr. Ernest Charles",male,21,0,0,A./5. 2152,08.05,,S|Plate 0 - Surface Top - Track 0 - Sector 4
+39,0,3,"Vander Planke Miss. Augusta Maria",female,18,2,0,345764,18,,S|Plate 0 - Surface Top - Track 0 - Sector 4
+40,1,3,"Nicola-Yarred Miss. Jamila",female,14,1,0,2651,11.2417,,C|Plate 0 - Surface Top - Track 0 - Sector 4
+41,0,3,"Ahlin Mrs. Johan (Johanna Persdotter Larsson)",female,40,1,0,7546,9.475,,S|Plate 0 - Surface Top - Track 0 - Sector 4
+43,0,3,"Kraeff Mr. Theodor",male,,0,0,349253,7.8958,,C|Plate 0 - Surface Top - Track 0 - Sector 4

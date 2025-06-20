@@ -4,6 +4,7 @@
 #include <iostream>
 #include "Disk/disk.h"
 #include <fstream>
+#include "Disk/block.h"
 
 
 int main() {
@@ -33,32 +34,70 @@ int main() {
     std::getline(std::cin, diskPath);
     
 
-    Disk disk(numPlates, numTracks, numSectors, sectorSize, diskPath); //platos/pistas/sectores
+    Disk disk(numPlates, numTracks, numSectors, sectorSize, diskPath, "titanic.csv"); //platos/pistas/sectores
     
-    
-    
+
+
 
     // ✅ NEW: Write Titanic.csv line by line
     std::ifstream titanicFile("data/titanic.csv");
     if (!titanicFile.is_open()) {
-        std::cerr << "❌ No se pudo abrir el archivo Titanic.csv\n";
+        std::cerr << "❌ No se pudo abrir el archivo titanic.csv\n";
     } else {
-        std::cout << "📥 Escribiendo registros de Titanic.csv al disco...\n";
+        std::cout << "📥 Escribiendo registros de titanic.csv al disco...\n";
         std::string line;
         std::getline(titanicFile, line);
- 
+        
         int count = 0;
         while (std::getline(titanicFile, line)) {
             bool success = disk.writeRecordToDisk(line);
             if (success) {
                 std::cout << "✅ Registro #" << ++count << " escrito correctamente\n";
             } else {
-                std::cerr << "❌ No hay espacio para el registro #" << ++count << "\n";
-                break; // Stop if full
-            }
+                std::cerr << "❌ Registro #" << ++count << " no se pudo escribir (sin espacio?)\n";
+            }   
         }
         titanicFile.close();
-    }
+        
+        std::vector<Block> blocks;
+        std::vector<Sector*> currentSectors;
+        int sectorsPerBlock = 4; // example: one block = 4 sectors
+        int blockID = 0;
+
+
+
+        // Flatten all sectors from the disk into a list
+        std::vector<Sector*> allSectors = disk.getAllSectors(); // <-- You'll need to expose this method
+
+        for (size_t i = 0; i < allSectors.size(); ++i) {
+            currentSectors.push_back(allSectors[i]);
+            if (currentSectors.size() == static_cast<size_t>(sectorsPerBlock) || i == allSectors.size() - 1){
+                blocks.emplace_back(blockID++, currentSectors, "titanic.csv");
+                currentSectors.clear();
+            }
+        }
+        for (const auto& block : blocks) {
+            block.writeHeaderToFile("blocks/");
+            block.writeContentToFile("blocks/");
+            
+        }    
+}
+
+        /*
+        std::string recordLine;
+    
+        for (auto& block : blocks) {
+            while (std::getline(titanicFile, recordLine)) {
+                if (block.canFit(recordLine)) {
+                    block.insertRecord(recordLine);
+                    std::cout << "✅ Registro #" << ++count << " insertado en bloque #" << block.getID() << "\n";
+                } else {
+                    break; // Try next block
+                }
+            }   
+            if (titanicFile.eof()) break;
+        }
+        */
 
     try { 
         disk.generateStructureReport("output/disk_report.txt");

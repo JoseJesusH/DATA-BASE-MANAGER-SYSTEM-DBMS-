@@ -9,6 +9,7 @@ class Track {
 private:
     int id;
     std::vector<Sector> sectors;
+    
 
 public:
     Track(int trackId, int numSectors, size_t sectorSize, const std::string& basePath);
@@ -17,6 +18,8 @@ public:
     Sector& getSector(int sectorId);
     const std::vector<Sector>& getSectors() const;
     int getId() const;
+    int countBlocksInTrack() const;
+
 };
 
 #endif

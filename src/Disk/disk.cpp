@@ -4,10 +4,11 @@
 #include <iomanip>
 #include <filesystem>
 #include<iostream>
+
 namespace fs = std::filesystem;
 
-Disk::Disk(int platesCount, int tracksCount, int sectorsCount, int sectorSizeBytes, const std::string& path)
-    : numPlates(platesCount), numTracks(tracksCount), numSectors(sectorsCount), sectorSize(sectorSizeBytes), basePath(path) {
+Disk::Disk(int platesCount, int tracksCount, int sectorsCount, int sectorSizeBytes, const std::string& path, const std::string& csvName)
+    : numPlates(platesCount), numTracks(tracksCount), numSectors(sectorsCount), sectorSize(sectorSizeBytes), basePath(path), currentCsvName(csvName) {
     
     totalCapacity = static_cast<size_t>(platesCount) * 2 * tracksCount * sectorsCount * sectorSizeBytes; // 2 = surfaces
 
@@ -51,7 +52,7 @@ bool Disk::writeRecordToDisk(const std::string& record) {
                                  << " - Track " << t
                                  << " - Sector " << sec;
 
-                        if (mutableSector.writeRecord(record, location.str())) {
+                        if (mutableSector.writeRecord(record, location.str(), currentCsvName)) {
                            return true;
                         }
                         //bool success = mutableSector.writeRecord(record, location.str());
@@ -99,6 +100,15 @@ size_t Disk::getTotalCapacity() const {
     return totalCapacity;
 }
 
+void Disk::setCurrentCsvName(const std::string& name) {
+    currentCsvName = name;
+}
+
+std::string Disk::getCurrentCsvName() const {
+    return currentCsvName;
+}
+
+
 void Disk::generateStructureReport(const std::string& outputPath) const {
     std::ofstream out(outputPath);
     if (!out.is_open()) {
@@ -120,7 +130,7 @@ void Disk::generateStructureReport(const std::string& outputPath) const {
         const Surface& bottom = plate.getBottomSurface();
 
         for (const Surface& surf : {top, bottom}) {
-            std::string surfaceLabel = (surf.getId() % 2 == 0) ? "Top" : "Bottom";  // Optional logic
+            std::string surfaceLabel = (surf.getId() % 2 == 0) ? "Top" : "Bottom";// Optional logic
 
             out << " ├─ Surface [" << surfaceLabel << "] ID: " << surf.getId() << "\n";
 
@@ -131,6 +141,30 @@ void Disk::generateStructureReport(const std::string& outputPath) const {
         }
         out << "\n";
     }
+    int totalBlocks = 0;
+
+    for (const auto& plate : plates) {
+        int plateBlockCount = 0;
+
+        for (const Surface* surf : { &plate.getTopSurface(), &plate.getBottomSurface() }) {
+            std::string surfaceLabel = (surf->getId() % 2 == 0) ? "Top" : "Bottom";
+            out << " ├─ Surface [" << surfaceLabel << "] ID: " << surf->getId() << "\n";
+
+            for (const Track& track : surf->getTracks()) {
+                // OPTIONAL: You might need to count blocks from metadata elsewhere
+                int blocksInTrack = track.countBlocksInTrack(); // custom function you implement
+                plateBlockCount += blocksInTrack;
+
+                out << " │   ├─ Track #" << track.getId() << ": "
+                    << track.getSectors().size() << " sectors, "
+                    << blocksInTrack << " blocks\n";
+            }
+        }
+
+        out << " 🎯 Total Blocks in Plate #" << plate.getId() << ": " << plateBlockCount << "\n\n";
+        totalBlocks += plateBlockCount;
+    }
+    out << "📦 Total Blocks in Disk: " << totalBlocks << "\n";
     out << "💾 Total Disk Capacity: " << totalCapacity << " bytes ("
         << (totalCapacity / 1024.0) << " KB | "
         << (totalCapacity / (1024.0 * 1024)) << " MB)\n";
@@ -138,3 +172,23 @@ void Disk::generateStructureReport(const std::string& outputPath) const {
     out << "========== END OF STRUCTURE REPORT ==========\n";
     out.close();
 }
+
+
+std::vector<Sector*> Disk::getAllSectors() {
+    std::vector<Sector*> allSectors;
+
+    for (auto& plate : plates) {
+        for (Surface* surface : { &plate.getTopSurface(), &plate.getBottomSurface() }) {
+            for (const Track& track : surface->getTracks()) {
+                for (const Sector& sector : track.getSectors()) {
+                    allSectors.push_back(const_cast<Sector*>(&sector)); // Remove constness
+                }
+            }
+        }
+    }
+
+    return allSectors;
+}
+
+
+

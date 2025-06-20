@@ -2,6 +2,7 @@
 #include <filesystem>
 #include <iomanip>
 #include <sstream>
+#include <fstream>
 
 namespace fs = std::filesystem;
 
@@ -15,7 +16,7 @@ Track::Track(int trackId, int numSectors, size_t sectorSize, const std::string& 
 
     for (int i = 0; i < numSectors; ++i) {
         std::ostringstream sectorPath;
-        sectorPath << trackFolder << "/block" << std::setw(3) << std::setfill('0') << i << ".txt";
+        sectorPath << trackFolder << "/sector" << std::setw(3) << std::setfill('0') << i << ".txt";
         sectors.emplace_back(sectorPath.str(), sectorSize);  // Pass sectorSize here
     }
 }
@@ -37,3 +38,16 @@ int Track::getId() const {
     return id;
 }
 
+int Track::countBlocksInTrack() const {
+    int count = 0;
+    for (const Sector& sector : sectors) {
+        std::ifstream file(sector.getPath());
+        std::string line;
+        while (std::getline(file, line)) {
+            if (!line.empty()) {
+                ++count;
+            }
+        }
+    }
+    return count;
+}
